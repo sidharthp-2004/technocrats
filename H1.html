@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Booking App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Travel Booking App</h1>
+    </header>
+    <main>
+        <section id="search">
+            <h2>Search Flights</h2>
+            <form id="searchForm">
+                <label for="origin">Origin:</label>
+                <input type="text" id="origin" name="origin" required>
+                <label for="destination">Destination:</label>
+                <input type="text" id="destination" name="destination" required>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+                <button type="submit">Search</button>
+            </form>
+        </section>
+        <section id="results">
+            <h2>Search Results</h2>
+            <div id="flightsList">
+                <!-- Flight search results will be displayed here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Travel Booking App. All rights reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
