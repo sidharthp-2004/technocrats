@@ -14,7 +14,7 @@ body, h1, h2, h3, p, ul, li, a {
 }
 
 header {
-    background-color: #333;
+    background-color: #d97373;
     color: #fff;
     padding: 10px 0;
     text-align: center;
@@ -24,6 +24,7 @@ header h1 {
     margin: 0;
     padding: 10px 0;
     font-size: 2.5em;
+    animation: slideInDown 1s ease-out;
 }
 
 header nav {
@@ -37,17 +38,19 @@ header nav ul {
 header nav ul li {
     display: inline;
     padding: 0 15px;
+    transition: transform 0.3s ease;
 }
 
 header nav ul li a {
-    color: #fff;
+    color: #4d4545;
     text-decoration: none;
     font-size: 1.2em;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 header nav ul li a:hover {
-    color: #77a6f7;
+    color: #4c6081;
+    transform: scale(1.1);
 }
 
 .hero {
@@ -58,6 +61,7 @@ header nav ul li a:hover {
     justify-content: center;
     align-items: center;
     color: #fff;
+    animation: fadeIn 2s ease-in;
 }
 
 .hero-content {
@@ -71,11 +75,13 @@ header nav ul li a:hover {
 .hero h2 {
     font-size: 3em;
     margin-bottom: 10px;
+    animation: slideInLeft 1s ease-out;
 }
 
 .hero p {
     font-size: 1.5em;
     margin-bottom: 20px;
+    animation: slideInRight 1s ease-out;
 }
 
 .btn {
@@ -85,21 +91,24 @@ header nav ul li a:hover {
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn:hover {
     background-color: #333;
+    transform: translateY(-5px);
 }
 
 .destinations {
     padding: 40px 0;
     text-align: center;
-    background-color: #f9f9f9;
+    background-color: #4d4980;
+    animation: fadeIn 2s ease-in;
 }
 
 .destinations h2 {
     margin-bottom: 20px;
+    animation: slideInDown 1s ease-out;
 }
 
 .destinations .card {
@@ -121,6 +130,11 @@ header nav ul li a:hover {
     width: 100%;
     height: auto;
     border-radius: 10px 10px 0 0;
+    transition: transform 0.3s ease;
+}
+
+.destinations .card img:hover {
+    transform: scale(1.1);
 }
 
 .destinations .card-content {
@@ -135,10 +149,12 @@ header nav ul li a:hover {
 .tours {
     padding: 40px 0;
     text-align: center;
+    animation: fadeIn 2s ease-in;
 }
 
 .tours h2 {
     margin-bottom: 20px;
+    animation: slideInDown 1s ease-out;
 }
 
 .tours .card {
@@ -160,6 +176,11 @@ header nav ul li a:hover {
     width: 100%;
     height: auto;
     border-radius: 10px 10px 0 0;
+    transition: transform 0.3s ease;
+}
+
+.tours .card img:hover {
+    transform: scale(1.1);
 }
 
 .tours .card-content {
@@ -170,24 +191,29 @@ header nav ul li a:hover {
     padding: 40px 0;
     text-align: center;
     background-color: #f9f9f9;
+    animation: fadeIn 2s ease-in;
 }
 
 .about h2 {
     margin-bottom: 20px;
+    animation: slideInDown 1s ease-out;
 }
 
 .about p {
     font-size: 1.2em;
     line-height: 1.6;
+    animation: slideInUp 1s ease-out;
 }
 
 .contact {
     padding: 40px 0;
     text-align: center;
+    animation: fadeIn 2s ease-in;
 }
 
 .contact h2 {
     margin-bottom: 20px;
+    animation: slideInDown 1s ease-out;
 }
 
 .contact form {
@@ -197,6 +223,7 @@ header nav ul li a:hover {
     background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: slideInUp 1s ease-out;
 }
 
 .contact form label {
@@ -228,11 +255,12 @@ header nav ul li a:hover {
     border-radius: 5px;
     font-size: 1em;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .contact form button:hover {
     background-color: #333;
+    transform: translateY(-5px);
 }
 
 footer {
@@ -241,6 +269,7 @@ footer {
     text-align: center;
     padding: 10px 0;
     margin-top: 20px;
+    animation: fadeIn 2s ease-in;
 }
 
 @media (max-width: 768px) {
@@ -260,24 +289,57 @@ footer {
         width: 100%;
     }
 }
-.card {
-    display: inline-block;
-    width: calc(33.33% - 40px);
-    margin: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+
+/* Keyframe animations */
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
-.card:hover {
-    transform: translateY(-5px);
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
-.card img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px 10px 0 0;
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
